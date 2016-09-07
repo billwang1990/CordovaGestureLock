@@ -118,7 +118,7 @@
         NSTimeInterval currentInterval = [[[NSDate alloc] init] timeIntervalSince1970];
         return  currentInterval - previousInterval > _showGestureLockInterval;
     }
-    return NO;
+    return YES;
 }
 
 - (void)handleUnLockEvent {

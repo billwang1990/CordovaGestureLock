@@ -1,0 +1,25 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-gesture-lock" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordovaGestureLock</name>
+    <description>Cordova Gesture Lock Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,gesture</keywords>
+    <asset src="src/gesture" target="gestureLock"/>
+
+    <js-module name="cordovaGestureLock" src="www/cordovaGestureLock.js">
+        <clobbers target="cordova.plugins.cordovaGestureLock" />
+    </js-module>
+
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="GestureLock">
+                <param name="ios-package" value="GestureLock"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/GestureLock.h" />
+        <source-file src="src/ios/GestureLock.m" />
+    </platform>
+</plugin>
